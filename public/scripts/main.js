@@ -24,10 +24,11 @@ $("body").delegate("#sub-btn", "click", function () {
     create(name, amount);
   }
 });
+
 function create(name, amount) {
   $.ajax({
     type: "POST",
-    url: `http://localhost:5000/api/transaction?name=${name}&amount=${amount}`,
+    url: `https://progressive-budgetunc.herokuapp.com/api/transaction?name=${name}&amount=${amount}`,
     dataType: "json",
     data: {},
     success: function (data) {
@@ -46,10 +47,11 @@ function validate() {
   }
   return true;
 }
+
 function getAllRecords() {
   $.ajax({
     type: "GET",
-    url: `http://localhost:5000/api/transactions`,
+    url: `https://progressive-budgetunc.herokuapp.com/api/transactions`,
     dataType: "json",
 
     success: function (data) {
